@@ -1,0 +1,7 @@
+<div *ngFor="let info of infoCocina; let i = index">
+    <ul>
+        <li>
+            {{ info.numero}} - {{info.nombre}} - <button (click)="entregarPedido($event,i)">Entregar!</button>
+        </li>
+    </ul>
+</div>

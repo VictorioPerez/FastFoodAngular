@@ -1,0 +1,11 @@
+<h1>Restaurant FastFood</h1>
+<p>Pedidos ingresados</p>
+<div *ngFor="let pedidos of pedidoTomado">
+<ul>
+    <p> {{pedidos | json}} </p>
+</ul>
+</div>
+<p>Pedidos listos para entregar</p>
+<app-pde-component [infoCocina]="pedidoEnviado"></app-pde-component>
+<app-pos-component (eventoPedido)="mostrarPedido($event)"></app-pos-component>
+<app-cocina-component [pedidoCocina]="pedidoTomado" (pedidoListoParaEntregar)="enviarPedido($event)"></app-cocina-component>
